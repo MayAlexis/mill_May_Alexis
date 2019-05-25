@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9547119750921137 0.2944092614441775 0.042991061764149775 0.303550893816861
-  position 0.17630150838903952 1.1119029399881213 2.6345410130005975
+  orientation 0 1 0 1.5707963267948966
+  position 2.2032148146992703 0.49999999999779526 -2.255960095738585e-05
 }
 TexturedBackground {
 }
@@ -37,7 +37,44 @@ Solid {
         DEF GR_2 Group {
           children [
             Transform {
-              translation 0.495 0 0
+              translation 0.495 0.475 0.45
+              children [
+                Shape {
+                  appearance DEF A_2 PBRAppearance {
+                    baseColor 0.6784313725490196 0.4980392156862745 0.6588235294117647
+                  }
+                  geometry DEF G_3Face Box {
+                    size 0.01 0.9 0.1
+                  }
+                }
+                Transform {
+                  translation 0 0 -0.9
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3Face
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0.4 -0.45
+                  rotation 1 0 0 1.57
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3Face
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 -0.4 -0.45
+                  rotation 1 0 0 1.57
+                  children [
+                    Shape {
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
