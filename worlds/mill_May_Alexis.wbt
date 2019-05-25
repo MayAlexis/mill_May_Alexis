@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.7843472674846209 -0.6152867562065125 -0.07887693976236858 5.959165926874502
-  position 1.28162555877347 0.9918119342866722 6.200200411772368
+  orientation 0.4684558828771628 0.8714876855598274 0.1451147811746044 5.600137127332538
+  position -2.729850721586992 1.0901780317262904 2.593386055413925
 }
 TexturedBackground {
 }
@@ -41,7 +41,7 @@ Solid {
               children [
                 Shape {
                   appearance DEF A_2 PBRAppearance {
-                    baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+                    baseColor 0.6784313725490196 0.4980392156862745 0.6588235294117647
                   }
                   geometry DEF G_3Face Box {
                     size 0.01 0.9 0.1
@@ -105,7 +105,62 @@ Solid {
         DEF GR_3 Group {
           children [
             Transform {
-              translation -0.99 0 0
+              translation -0.495 0.475 0.45
+              children [
+                Shape {
+                  appearance USE A_2
+                  geometry USE G_3Face
+                }
+                Transform {
+                  translation 0 0 -0.9
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3Face
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0.4 -0.45
+                  rotation 1 0 0 1.57
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3Face
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 -0.4 -0.45
+                  rotation 1 0 0 1.57
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3Face
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0 -0.45
+                  rotation 1 0 0 0.85
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3FACE_1
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0 -0.45
+                  rotation 1 0 0 -0.85
+                  children [
+                    Shape {
+                      appearance USE A_2
+                      geometry USE G_3FACE_1
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
