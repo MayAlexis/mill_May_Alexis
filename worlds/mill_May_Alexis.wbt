@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.7089302782656709 0.6989206641495482 0.09448685508002012 0.37686586889227897
-  position 1.1856734146872219 2.4113095746675945 3.177206801447223
+  orientation -0.5198655248775099 0.8435065051646046 0.13504299977720358 0.5974847201646637
+  position 3.0491416958359188 2.795538388407852 3.722860037221401
 }
 TexturedBackground {
 }
@@ -323,6 +323,42 @@ Solid {
                         }
                         geometry DEF G_M Box {
                           size 0.7 0.05 0.05
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          anchor 0.35 0 0
+                          staticFriction 0.01
+                        }
+                        endPoint Solid {
+                          translation 0.355 0 0
+                          rotation 1 0 0 0
+                          children [
+                            DEF GR_E Group {
+                              children [
+                                Shape {
+                                  appearance DEF A_E PBRAppearance {
+                                    baseColor 0.7294117647058823 0.7411764705882353 0.7137254901960784
+                                  }
+                                  geometry DEF G_E Box {
+                                    size 0.01 1 0.05
+                                  }
+                                }
+                                Transform {
+                                  rotation 1 0 0 1.57
+                                  children [
+                                    Shape {
+                                      appearance USE A_E
+                                      geometry USE G_E
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                          boundingObject USE GR_E
+                          physics Physics {
+                          }
                         }
                       }
                     ]
