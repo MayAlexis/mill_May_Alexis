@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.22478558446618654 -0.973171027389743 -0.04908759991471536 5.841707287863527
-  position 1.800950360935233 1.1414218573809332 4.772863276770552
+  orientation -0.7089302782656709 0.6989206641495482 0.09448685508002012 0.37686586889227897
+  position 1.1856734146872219 2.4113095746675945 3.177206801447223
 }
 TexturedBackground {
 }
@@ -289,6 +289,47 @@ Solid {
                       geometry USE G_4FACE_1
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        }
+        Group {
+          children [
+            Transform {
+              translation 0 1.225 0
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.1
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor 0 0.25 0
+                    staticFriction 0.02
+                  }
+                  endPoint Solid {
+                    translation 0.35 0.275 0
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.9882352941176471 0.9137254901960784 0.30980392156862746
+                        }
+                        geometry DEF G_M Box {
+                          size 0.7 0.05 0.05
+                        }
+                      }
+                    ]
+                    boundingObject USE G_M
+                    physics Physics {
+                    }
+                  }
                 }
               ]
             }
